@@ -3,6 +3,10 @@ import 'package:flutter/widgets.dart';
 
 class AppColors {
   static const primaryColor = Color.fromRGBO(41, 98, 255, 1);
+  static const accentColor = Color.fromRGBO(184, 203, 255, 1);
   static const backgroundColor = Colors.white;
-  static const secondartColor = Color.fromRGBO(93, 93, 93, 1);
+  static const secondaryColor = Color.fromRGBO(93, 93, 93, 1);
+  static const subtitleColor = Color.fromRGBO(118, 118, 118, 1);
+  static const subheadColor = Color.fromRGBO(33, 33, 33, 1);
+  static const boxBackground = Color.fromRGBO(238, 238, 238, 1);
 }

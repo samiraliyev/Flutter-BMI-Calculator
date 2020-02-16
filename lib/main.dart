@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'BMI Calculator',
+      title: 'Flutter BMI Calculator',
       debugShowCheckedModeBanner: false,
       darkTheme: ThemeData(
         brightness: Brightness.dark,
@@ -37,7 +37,8 @@ class MyApp extends StatelessWidget {
       ),
       theme: ThemeData(
         brightness: Brightness.light,
-        primarySwatch: Colors.indigo,
+        primaryColor: AppColors.primaryColor,
+        accentColor: AppColors.accentColor,
         textTheme: TextTheme(
           display1: GoogleFonts.heebo(
             color: AppColors.primaryColor,
@@ -46,9 +47,23 @@ class MyApp extends StatelessWidget {
             height: 0.9,
           ),
           body1: GoogleFonts.heebo(
-            color: AppColors.secondartColor,
+            color: AppColors.secondaryColor,
             fontSize: 31,
             fontWeight: FontWeight.w500,
+          ),
+          title: GoogleFonts.heebo(
+            color: AppColors.primaryColor,
+            fontSize: 32,
+            fontWeight: FontWeight.w500,
+          ),
+          subtitle: GoogleFonts.heebo(
+            color: AppColors.subtitleColor,
+            fontSize: 14,
+          ),
+          subhead: GoogleFonts.heebo(
+            color: AppColors.subheadColor,
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
           ),
         ),
       ),
