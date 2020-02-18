@@ -1,7 +1,7 @@
-import 'package:bmi_calculator/ui/pages/add_date_page.dart';
 import 'package:bmi_calculator/ui/pages/splash_page.dart';
 import 'package:bmi_calculator/ui/router.dart';
 import 'package:bmi_calculator/ui/shared/colors.dart';
+import 'package:bmi_calculator/ui/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -35,39 +35,12 @@ class MyApp extends StatelessWidget {
         brightness: Brightness.dark,
         primarySwatch: Colors.orange,
       ),
-      theme: ThemeData(
-        brightness: Brightness.light,
-        primaryColor: AppColors.primaryColor,
-        accentColor: AppColors.accentColor,
-        textTheme: TextTheme(
-          display1: GoogleFonts.heebo(
-            color: AppColors.primaryColor,
-            fontSize: 80,
-            fontWeight: FontWeight.w700,
-            height: 0.9,
-          ),
-          body1: GoogleFonts.heebo(
-            color: AppColors.secondaryColor,
-            fontSize: 31,
-            fontWeight: FontWeight.w500,
-          ),
-          title: GoogleFonts.heebo(
-            color: AppColors.primaryColor,
-            fontSize: 32,
-            fontWeight: FontWeight.w500,
-          ),
-          subtitle: GoogleFonts.heebo(
-            color: AppColors.subtitleColor,
-            fontSize: 14,
-          ),
-          subhead: GoogleFonts.heebo(
-            color: AppColors.subheadColor,
-            fontSize: 16,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-      ),
-      home: SplashPage(),
+      home: LayoutBuilder(builder: (context, constraints) {
+        return OrientationBuilder(builder: (context, orientation) {
+          SizeConfig().init(constraints, orientation, context);
+          return SplashPage();
+        });
+      }),
       onGenerateRoute: onGenerateRoute,
     );
   }

@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:bmi_calculator/constants/routes.dart';
 import 'package:bmi_calculator/ui/shared/colors.dart';
+import 'package:bmi_calculator/ui/shared/fonts.dart';
 import 'package:flutter/material.dart';
 
 class SplashPage extends StatefulWidget {
@@ -36,11 +37,11 @@ class _SplashPageState extends State<SplashPage> {
           ),
           text: TextSpan(
             text: 'BMI\n',
-            style: Theme.of(context).textTheme.display1,
+            style: AppFonts.largeFontStyle,
             children: [
               TextSpan(
                 text: 'Calculator',
-                style: Theme.of(context).textTheme.body1,
+                style: AppFonts.mediumFontStyle,
               ),
             ],
           ),

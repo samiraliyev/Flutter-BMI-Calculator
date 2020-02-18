@@ -1,18 +1,25 @@
+import 'package:bmi_calculator/ui/shared/fonts.dart';
+import 'package:bmi_calculator/ui/size_config.dart';
 import 'package:flutter/material.dart';
 
 class OnBoardingTop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.fromLTRB(36, 77, 55, 40),
+      margin: EdgeInsets.fromLTRB(
+        SizeConfig.widthMultiplier * 10,
+        SizeConfig.heightMultiplier * 8.28125,
+        SizeConfig.widthMultiplier * 15.277,
+        SizeConfig.heightMultiplier * 6.25,
+      ),
       child: RichText(
         text: TextSpan(
           text: 'Welcome\n',
-          style: Theme.of(context).textTheme.title,
+          style: AppFonts.mediumFontStyleV2,
           children: [
             TextSpan(
               text: 'Please add your information for calculation',
-              style: Theme.of(context).textTheme.subtitle,
+              style: AppFonts.tinyTextStyle,
             ),
           ],
         ),

@@ -9,4 +9,6 @@ class AppColors {
   static const subtitleColor = Color.fromRGBO(118, 118, 118, 1);
   static const subheadColor = Color.fromRGBO(33, 33, 33, 1);
   static const boxBackground = Color.fromRGBO(238, 238, 238, 1);
+  static const genderTextColor = Color.fromRGBO(101, 101, 101, 1);
+  static const dotColor = Color.fromRGBO(209, 209, 209, 1);
 }

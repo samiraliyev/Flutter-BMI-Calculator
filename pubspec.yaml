@@ -41,6 +41,8 @@ flutter:
     - assets/bmi.png
     - assets/male.svg
     - assets/female.svg
+    - assets/male_selected.svg
+    - assets/female_selected.svg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
