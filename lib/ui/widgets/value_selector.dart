@@ -5,6 +5,7 @@ import '../size_config.dart';
 
 class ValueSelector extends StatefulWidget {
   final String selectorTitle;
+  final String selectorSubtitle;
   final List<int> values;
   final Color selectorColor;
   final Function(int) onItemSelected;
@@ -13,6 +14,7 @@ class ValueSelector extends StatefulWidget {
     @required this.selectorTitle,
     @required this.values,
     @required this.onItemSelected,
+    this.selectorSubtitle,
     this.selectorColor,
   });
 
@@ -28,7 +30,7 @@ class _ValueSelectorState extends State<ValueSelector> {
   void initState() {
     _pageController = PageController(
       initialPage: 0,
-      viewportFraction: 0.25,
+      viewportFraction: 0.23,
     );
     super.initState();
   }
@@ -48,9 +50,10 @@ class _ValueSelectorState extends State<ValueSelector> {
           ),
         ),
         Container(
-          height: SizeConfig.heightMultiplier * 5 * SizeConfig.textScaleFactor,
+          height:
+              SizeConfig.heightMultiplier * 4.5 * SizeConfig.textScaleFactor,
           margin: EdgeInsets.only(
-            bottom: SizeConfig.heightMultiplier * 1.5625,
+            bottom: SizeConfig.heightMultiplier * 1.3,
           ),
           child: NotificationListener<ScrollNotification>(
             onNotification: (_) {
@@ -78,11 +81,25 @@ class _ValueSelectorState extends State<ValueSelector> {
         Container(
           margin: EdgeInsets.symmetric(
             vertical: 0,
-            horizontal: SizeConfig.widthMultiplier * 10,
+            horizontal: SizeConfig.widthMultiplier * 9.722,
           ),
           width: double.infinity,
           height: SizeConfig.heightMultiplier * 0.78125,
           color: AppColors.accentColor,
+        ),
+        Visibility(
+          visible: widget.selectorSubtitle != null,
+          child: Padding(
+            padding: EdgeInsets.only(
+              top: SizeConfig.heightMultiplier * 1.5625,
+            ),
+            child: Center(
+              child: Text(
+                widget.selectorSubtitle ?? '',
+                style: AppFonts.tinyTextStyleV5,
+              ),
+            ),
+          ),
         ),
       ],
     );
@@ -91,10 +108,9 @@ class _ValueSelectorState extends State<ValueSelector> {
   Widget _numberItem(int number, [bool isSelected = false]) {
     return Container(
       width: SizeConfig.widthMultiplier * 11.94444 * SizeConfig.textScaleFactor,
-      height:
-          SizeConfig.heightMultiplier * 3.90625 * SizeConfig.textScaleFactor,
+      height: SizeConfig.heightMultiplier * 4 * SizeConfig.textScaleFactor,
       margin: EdgeInsets.symmetric(
-        horizontal: 8,
+        horizontal: 16,
         vertical: 0,
       ),
       padding: EdgeInsets.symmetric(

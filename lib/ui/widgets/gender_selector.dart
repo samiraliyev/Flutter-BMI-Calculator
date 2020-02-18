@@ -79,6 +79,8 @@ class _GenderSelectorState extends State<GenderSelector> {
               Text(
                 isMale ? 'male' : 'female',
                 style: AppFonts.tinyTextStyleV2,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
               ),
             ],
           ),

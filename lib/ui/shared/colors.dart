@@ -11,4 +11,5 @@ class AppColors {
   static const boxBackground = Color.fromRGBO(238, 238, 238, 1);
   static const genderTextColor = Color.fromRGBO(101, 101, 101, 1);
   static const dotColor = Color.fromRGBO(209, 209, 209, 1);
+  static const pageControlTextColor = Color.fromRGBO(132, 132, 132, 1);
 }

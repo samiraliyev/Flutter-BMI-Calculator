@@ -10,7 +10,7 @@ class OnBoardingTop extends StatelessWidget {
         SizeConfig.widthMultiplier * 10,
         SizeConfig.heightMultiplier * 8.28125,
         SizeConfig.widthMultiplier * 15.277,
-        SizeConfig.heightMultiplier * 6.25,
+        0,
       ),
       child: RichText(
         text: TextSpan(

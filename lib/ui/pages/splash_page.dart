@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:bmi_calculator/constants/routes.dart';
 import 'package:bmi_calculator/ui/shared/colors.dart';
 import 'package:bmi_calculator/ui/shared/fonts.dart';
+import 'package:bmi_calculator/ui/size_config.dart';
 import 'package:flutter/material.dart';
 
 class SplashPage extends StatefulWidget {
@@ -12,7 +13,7 @@ class SplashPage extends StatefulWidget {
 
 class _SplashPageState extends State<SplashPage> {
   _startTime() async {
-    var duration = new Duration(milliseconds: 1500);
+    var duration = new Duration(milliseconds: 2000);
     return new Timer(duration, _navigateToNextPage);
   }
 
@@ -31,20 +32,46 @@ class _SplashPageState extends State<SplashPage> {
     return Scaffold(
       backgroundColor: AppColors.backgroundColor,
       body: Center(
-        child: RichText(
-          strutStyle: StrutStyle(
-            fontSize: 1,
-          ),
-          text: TextSpan(
-            text: 'BMI\n',
-            style: AppFonts.largeFontStyle,
-            children: [
-              TextSpan(
-                text: 'Calculator',
-                style: AppFonts.mediumFontStyle,
-              ),
-            ],
-          ),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            TweenAnimationBuilder(
+                curve: Curves.easeInOutBack,
+                tween: Tween<Offset>(
+                  begin: Offset(SizeConfig.screenWidth, 0),
+                  end: Offset(0, 0),
+                ),
+                duration: Duration(
+                  milliseconds: 1000,
+                ),
+                builder: (context, offset, widget) {
+                  return Transform.translate(
+                    offset: offset,
+                    child: Text(
+                      'BMI',
+                      style: AppFonts.largeFontStyle,
+                    ),
+                  );
+                }),
+            TweenAnimationBuilder(
+                curve: Curves.easeInOutBack,
+                tween: Tween<Offset>(
+                  begin: Offset(-SizeConfig.screenWidth, 0),
+                  end: Offset(0, 0),
+                ),
+                duration: Duration(
+                  milliseconds: 1000,
+                ),
+                builder: (context, offset, widget) {
+                  return Transform.translate(
+                    offset: offset,
+                    child: Text(
+                      'calculator',
+                      style: AppFonts.mediumFontStyle,
+                    ),
+                  );
+                }),
+          ],
         ),
       ),
     );
