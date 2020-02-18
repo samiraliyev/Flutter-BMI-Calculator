@@ -1,10 +1,8 @@
 import 'package:bmi_calculator/ui/pages/splash_page.dart';
 import 'package:bmi_calculator/ui/router.dart';
-import 'package:bmi_calculator/ui/shared/colors.dart';
 import 'package:bmi_calculator/ui/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

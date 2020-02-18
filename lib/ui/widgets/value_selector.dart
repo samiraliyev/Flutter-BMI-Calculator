@@ -28,7 +28,7 @@ class _ValueSelectorState extends State<ValueSelector> {
   void initState() {
     _pageController = PageController(
       initialPage: 0,
-      viewportFraction: 0.20,
+      viewportFraction: 0.25,
     );
     super.initState();
   }

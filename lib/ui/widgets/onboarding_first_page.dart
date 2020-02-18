@@ -10,7 +10,7 @@ class OnBoardingFirstPage extends StatelessWidget {
         GenderSelector(),
         ValueSelector(
           selectorTitle: 'Age',
-          values: List.generate(100, (index) => index),
+          values: List.generate(105, (index) => index),
           onItemSelected: (selectedItem) {
             print('selectedItem: $selectedItem');
           },

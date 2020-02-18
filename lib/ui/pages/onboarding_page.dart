@@ -1,5 +1,5 @@
 import 'package:bmi_calculator/ui/shared/colors.dart';
-import 'package:bmi_calculator/ui/widgets/dots_indicator.dart';
+import 'package:bmi_calculator/ui/widgets/dot_indicator.dart';
 import 'package:bmi_calculator/ui/widgets/onboarding_first_page.dart';
 import 'package:bmi_calculator/ui/widgets/onboarding_second_page.dart';
 import 'package:bmi_calculator/ui/widgets/onboarding_top.dart';
@@ -15,10 +15,10 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
 
   @override
   void initState() {
-    super.initState();
     _pageController = PageController(
       initialPage: 0,
     );
+    super.initState();
   }
 
   @override
@@ -31,7 +31,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
           children: <Widget>[
             OnBoardingTop(),
             Expanded(
-              flex: 2,
+              flex: 3,
               child: PageView(
                 controller: _pageController,
                 children: <Widget>[
@@ -41,12 +41,11 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
               ),
             ),
             Expanded(
-              child: Center(
-                child: DotsIndicator(
-                  controller: _pageController,
-                  color: AppColors.dotColor,
-                  itemCount: 2,
-                ),
+              child: DotIndicator(
+                pageCount: 2,
+                pageController: _pageController,
+                activeDotColor: AppColors.primaryColor,
+                dotColor: AppColors.dotColor,
               ),
             ),
           ],
